@@ -14,7 +14,12 @@ if(islocal){
   var host = '';
 }
 
+function track_user() {
+  if(!islocal){
+    const page_access =   await ping();
+  }
 
+}
 
 function typeWriter() {
   var txt = 'Live Instructor. Online Classes.'; /* The text */
@@ -210,6 +215,7 @@ function populate_cohort(courseTitle) {
 function main() {
   typeWriter();
   getCourseList();
+  track_user();
 
 
 }
@@ -340,7 +346,7 @@ async function handleSubmit(e) {
       var severSubmitPayment = await createStudent(student);
       setLoading(false);
       await successfulPaymentUI(severSubmitPayment,student.email);
-      // refresh course list 
+      // refresh course list
       getCourseList();
 
       return;
