@@ -1,25 +1,31 @@
+var islocal    = false;
 var text_lenght_i = 0;
 var reset = false;
-var islocal = true;
 // This is your test publishable API key.
 const stripe = Stripe("pk_test_51LKBjELd2ZgM3kuXOubcO489oFQJrtbg06CpCOBCl6vzM8mv4G2qZ61NlEYsgXjDj3f64ZyoBViuJGHBPXVCXATs00oWXqUtut");
 
 
 if(islocal){
-   var backend = 'http://127.0.0.1:8000';
+   var backend = 'http://localhost:8000';
    var host = 'http://localhost:8001'
 
 }else {
-  var backend = '';
+  var backend = 'https://phostrino.herokuapp.com';
   var host = '';
 }
 
-function track_user() {
-  if(!islocal){
-    const page_access =   await ping();
+async function track_user() {
+  if(islocal){
+    var page_access =   await ping();
+    await fetch(backend+"/log_login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ page_access }),
+    });
   }
 
 }
+
 
 function typeWriter() {
   var txt = 'Live Instructor. Online Classes.'; /* The text */
@@ -216,8 +222,6 @@ function main() {
   typeWriter();
   getCourseList();
   track_user();
-
-
 }
 
 
