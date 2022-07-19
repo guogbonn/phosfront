@@ -15,7 +15,7 @@ if(islocal){
 }
 
 async function track_user() {
-  if(islocal){
+  if(!islocal){
     var page_access =   await ping();
     await fetch(backend+"/log_login", {
       method: "POST",
