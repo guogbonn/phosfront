@@ -1,4 +1,4 @@
-var islocal    = false;
+var islocal     = false;
 var text_lenght_i = 0;
 var reset = false;
 // This is your test publishable API key.
