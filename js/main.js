@@ -11,7 +11,7 @@ if(islocal){
 
 }else {
   var backend = 'https://phostrino.herokuapp.com';
-  var host = 'https://phostrino';
+  var host = 'https://phostrino.com';
 }
 
 
@@ -186,7 +186,7 @@ function   getCourseList() {
   fetch(backend + '/courselist')
     .then(response => response.json()).then(data  => {
         // handle the response
-        console.log("courseList",data);
+        // console.log("courseList",data);
         courseList = data;
     })
     .catch(error => {
@@ -344,6 +344,7 @@ async function handleSubmit(e) {
   student.course_time = courseList[selectedCourseTitle].find(x => x.id === courseSelected).class_time;
   student.course_title = courseList[selectedCourseTitle].find(x => x.id === courseSelected).course_title;
   student.zoom_link = courseList[selectedCourseTitle].find(x => x.id === courseSelected).zoom_link;
+  student.passcode = courseList[selectedCourseTitle].find(x => x.id === courseSelected).passcode;
 
 
 
