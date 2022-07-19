@@ -1,4 +1,4 @@
-var islocal     = false;
+var islocal = false;
 var text_lenght_i = 0;
 var reset = false;
 // This is your test publishable API key.
@@ -154,7 +154,7 @@ function enroll() {
     // local  ipinfo.io?token=22bbe7ed5730c9
     //HTTPS/ SSL https://ipinfo.io?token=22bbe7ed5730c9
     var info;
-    await fetch('http://ipinfo.io/json?token=22bbe7ed5730c9')
+    await fetch('https://ipinfo.io/json?token=22bbe7ed5730c9')
      .then(response => response.json()).then(data  => {
          // handle the response
          info = data;
