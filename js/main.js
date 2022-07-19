@@ -2,7 +2,7 @@ var islocal = false;
 var text_lenght_i = 0;
 var reset = false;
 // This is your test publishable API key.
-const stripe = Stripe("pk_test_51LKBjELd2ZgM3kuXOubcO489oFQJrtbg06CpCOBCl6vzM8mv4G2qZ61NlEYsgXjDj3f64ZyoBViuJGHBPXVCXATs00oWXqUtut");
+var stripe;
 
 
 if(islocal){
@@ -14,15 +14,31 @@ if(islocal){
   var host = 'https://phostrino';
 }
 
+
+function getenv() {
+   fetch(backend + '/env')
+   .then(response => response.json()).then(data  => {
+       // handle the response
+       stripe = Stripe(data["stripe_pk"])
+
+   })
+    .catch(error => {
+        // handle the error
+          console.log(error);
+    });
+
+
+}
+
 async function track_user() {
-  if(!islocal){
+
     var page_access =   await ping();
     await fetch(backend+"/log_login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ page_access }),
     });
-  }
+
 
 }
 
@@ -222,6 +238,7 @@ function main() {
   typeWriter();
   getCourseList();
   track_user();
+  getenv();
 }
 
 
