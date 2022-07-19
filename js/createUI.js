@@ -34,7 +34,7 @@ function create_enrollment_description(instance) {
 
                       <p> <b>Requirments:</b> Zoom - Video Conference software; Computer (Mac/Linux/Windows) made within the last seven years.</p>
 
-                      <p> <b>Refund:</b> Allowed up to 24 hrs  <b>after</b> the first session </p>`;
+                      <p> <b>Refund:</b> Allowed up to 24 hrs  <b>after</b> the first session <b>3% Processing Fee</b></p>`;
 }
 
 
