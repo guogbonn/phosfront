@@ -3932,7 +3932,6 @@
      crossorigin="anonymous"></script>
 <ins class="adsbygoogle"
      style="display:block;width:336px;height:280px;"
-     data-adtest="on"
      data-ad-format="fluid"
      data-ad-layout-key="-6t+ed+2i-1n-4w"
      data-ad-client="ca-pub-5695242329127800"
