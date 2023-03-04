@@ -1,584 +1,878 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Phostrino </title>
-    <link rel="shortcut icon" href="img/logo.png">
-    <meta data-react-helmet="true" name="description" content="Learn to code from  software en coding bootcamp. ">
-    <meta name="google-site-verification" content="cBFoN-TVrqRiC4ozXfo7NzYAO5NWUfAZxhg3GYDczwg" />
-    <meta content="Want to learn how to code? Interested in a STEM or software career? Join our 10-day online coding boot camp course! For just $200, we provide online coding lessons for 18+ and kids (14 - 17), with live instructors! Spots are limited! Sign up today!" name="description">
-    <meta content="Want to learn how to code? Interested in a STEM or software career? Join our 10-day online coding boot camp course! For just $200, we provide online coding lessons for 18+ and kids (14 - 17), with live instructors! Spots are limited! Sign up today!"property="og:title">
-    <meta content="Want to learn how to code? Interested in a STEM or software career? Join our 10-day online coding boot camp course! For just $200, we provide online coding lessons for 18+ and kids (14 - 17), with live instructors! Spots are limited! Sign up today!"property="og:description">
-    <meta content="Want to learn how to code? Interested in a STEM or software career? Join our 10-day online coding boot camp course! For just $200, we provide online coding lessons for 18+ and kids (14 - 17), with live instructors! Spots are limited! Sign up today!"property="twitter:title">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://js.stripe.com/v3/"></script>
 
-  </head>
-  <body onload="main()">
-        <nav class="navbar navbar-expand-lg bg-light" style="background-color: black !important; color: white !important;">
-        <div class="container-fluid">
-          <!-- NeoQuant -->
-          <a class="navbar-brand" href="#" style="color:white !important">Phostrino  </a>
-          <button style="visibility: hidden;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Phostrino</title>
+            <link rel="shortcut icon" href="img/logo.png">
+            <meta data-react-helmet="true" name="description" content="Learn to code from  software en coding bootcamp. ">
+            <meta name="google-site-verification" content="cBFoN-TVrqRiC4ozXfo7NzYAO5NWUfAZxhg3GYDczwg" />
+            <meta
+              content="Discover the latest fashion trends with our collection of clothing apparel from top brands like Nike and Anthropologie. Our user-friendly search feed allows you to easily find and save your favorite apparel, with the added convenience of a direct link to purchase. Create your own unique style by grouping different apparel from various companies and sharing them with the community. Follow other users and stay up-to-date with the latest fashion trends. Explore our website today and elevate your fashion game!"
+              name="description">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta property="og:title" content="Phostrino">
+            <link rel="stylesheet" href="css/normalize.css">
+            <link rel="stylesheet" href="css/main.css">
+
+            <meta name="theme-color" content="#fafafa">
+      </head>
 
 
+      <body id="documentbody" style=" font-family: Arial, Helvetica, sans-serif; display:none; overflow-x:hidden;">
+            <nav style="background-color: black !important; color: white !important; display:flex;position: fixed;top: 0px;left: 0px;width: 100%;z-index: 100; height: 63px;">
 
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Courses</a>
-              </li> -->
+                  <div>
+                        <h3 class=" phos_headerz" style="color:white !important; position: absolute; cursor: pointer; ">Phostrino </h3>
 
-            </ul>
+                  </div>
+                  <div class="phos_input" style="position: absolute;width:100%; ">
+                        <div class="input_search_list_page" style=" position: absolute; top: 50%;  left: 50%;  transform: translate(-40%, -40%) translateX(-40%); ">
+                              <input autocomplete="off" id="mainSearchField" class="search_field" style="border-radius:12px;" placeholder="Search (E.G. Leggings, Dress, )" type="text" name="" value="">
+                        </div>
 
-          </div>
-        </div>
-      </nav>
+                        <div style="cursor:pointer;" class="phos_filterz">
+                              <p style="cursor:pointer;">Filter </p>
+                        </div>
 
-      <div class="main_content">
+                        <div class="phos_sign_in" style="position: absolute;color: white;">
+                              <p>Sign In</p>
+                        </div>
 
-        <div style="position: relative;  text-align: center; color: white;">
-          <img src="img/jumbotron.jpg" style="width:100vw; height:100vh; object-fit: cover;" alt="">
-          <div style="position: absolute;top: 30%; left: 50%; transform: translate(-50%, -50%);">
-              <h1 id="demo"></h1>
+                  </div>
+            </nav>
 
-
-          </div>
-
-
-
-          <div class="card "   style="background: rgba( 255, 255, 255, 0.15 );
-            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-            backdrop-filter: blur( 10.5px );
-            -webkit-backdrop-filter: blur( 10.5px );
-            border-radius: 10px;
-            border: 1px solid rgba( 255, 255, 255, 0.18 ); position: absolute;top: 60%; left: 50%; transform: translate(-50%, -50%);">
-            <div class="card-body">
-              <h5 class="card-title">Intro to Python </h5>
-              <div class="card-text" style="margin-top:10px; margin-bottom:10px;">
-                <p> Course Length: 10 Sessions</p>
-                <p>Session Duration: 1 hr </p>
-                <h6> $200</h6>
-
-              </div>
-
-              <button onclick="populate_cohort('Intro to Python')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">Details</button>
+            <!-- Main Autocomplete -->
+            <div class="main-auto hideSignIn" style="position:relative;">
+                  <div style="position:fixed; z-index:200;" class="typeahead_position_1">
+                        <div class="typeahead_container_1">
+                              <div inst="word1" class="typeaheadInstance_1 ">
+                                    L<strong>egg</strong>ings
+                              </div>
+                              <div inst="word2" class="typeaheadInstance_1 ">
+                                    <strong>Dress</strong>
+                              </div>
+                        </div>
+                  </div>
             </div>
-          </div>
 
-        </div>
-
-
-        <div class="" style="background-color:black; width:100vw; height: auto; object-fit: cover; color:white; text-align: center; padding:20px;">
-          <h1 >About Phostrino </h1>
-
-          <p>Coding is part of everything we do! <br> <br>
-
-      Every website you visit, every app on your phone, every car you’ve ever ridden in, every plane you’ve flown in, all the electronic devices around your house from your A/C to your toaster…all function by executing code. <br> <br>
-
-     Learning how to code enables you to take part in building the devices and systems that keep our world spinning. While this may seem like a daunting responsibility; here at Phostrino, we foster a non-intimidating learning environment suitable for all ages and knowledge levels. </p>
-
-            <h2>Our Purpose</h2>
-            <br>
-          Foster and solidify a passion for technological innovation while teaching skills necessary for the 21st century workforce.
-          <br> <br>
-          <h2>Our Niche</h2>
-          <br>
-
-          <p>   Providing advanced, flexible and engaging technology education for our students.</p>
-           <p>Our students learn basic to advanced computer and programming skills, giving them 21st-century tools for creative expression!</p>
-
-
-
-        </div>
-
-
-        <div class="Teachers"  style="background-color:black; width:100vw; height:100vh; object-fit: cover;">
-
-          <div style="position: absolute;
-                      top: 9%;
-                      left: 50%;
-                      transform: translate(-50%, -50%);
-                      color: white;
-                      white-space: nowrap;">
-              <h1 >Featured Instructor</h1>
-          </div>
-
-          <img src="img/cirletri.jpg" style="width:100vw; height:100vh; object-fit: cover;" alt="">
-
-          <div class="cardp">
-                 <div class="cardp-img">
-                     <img src="img/gabe.jpg">
-                 </div>
-                 <div class="desc">
-                   <h6 class="primary-text">Gabe</h6>
-                    <h6 class="secondary-text"> Software Engineer</h6>
-                 </div>
-                 <div class="details">
-                     <div class="rating">
-                       <h6 class="primary-text"> About </h6>
-
-                         <h6 class="secondary-text">  Gabe is a Software Engineer who has experience working at Honeywell Aerospace, as well as General Motors. He has expertise in developing embedded, mobile, and web-based applications. He has a deep knowledge in many coding languages, including HTML, CSS, JavaScript, Python, Java, C++, and Swift. Gabe is a graduate of Arizona State University with a degree in Electrical Engineering, so he has a solid understanding of the hardware behind the scenes as well.  </h6>
-                     </div>
-
-                 </div>
-          </div>
-        </div>
-
-        <div class="" style="background-color:black; width:100vw; height:20vh; object-fit: cover; color:white; padding:10px; text-align:center;">
-          <p>Contact Us: support@phostrino.com</p>
-          <p data-bs-toggle="modal" data-bs-target="#modal2" style="cursor:pointer;" >Legal</p>
-          <p style="font-size: 10px;" >All Content © Phostrino L.L.C. 2022. "Phostrino" and the Phostrino Logo are trademarks of Phostrino L.L.C. All Rights Reserved.</p>
-        </div>
-
-        <!-- | | | | | | | | | | | | |  -->
-
-                <!-- Scrollable modal -->
-        <div id="modal1" class="modal fade" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" >
-              <div class="modal-content" style="background: rgba( 255, 255, 255, 0.75 );
-                        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-                        backdrop-filter: blur( 20px );
-                        -webkit-backdrop-filter: blur( 20px );
-                        border-radius: 10px;
-                        border: 1px solid rgba( 255, 255, 255, 0.18 );">
-                <div class="modal-header">
-                  <h5 class="modal-title">Cohort Selection</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-2" style="text-align: center; ">
-                        <p>Days</p>
-                      </div>
-                      <div class="col-2" style="text-align: center;">
-                         Time
-                      </div>
-                      <div class="col-3" style="text-align: center;">
-                        Dates
-                      </div>
-                      <div class="col-2" style="text-align: center;">
-                        Ages
-                      </div>
-                      <div class="col-3" style="text-align: center;">
-                        Seats left
-                      </div>
-
-                    </div>
-
+            <!-- Loader  -->
+            <div style="position:relative;">
+                  <div style="position:fixed; z-index:200;" class="typeahead_position_1 ">
+                        <div class="autoLoader">
+                        </div>
                   </div>
-
-                  <div id="cohortList" class="scrollbar-x" style="overflow-y:auto; max-height: 200px; overflow-x: hidden; border-radius:5px;">
-                    <!-- cohorts -->
-
-
-                  </div>
-                  <div class="modal-footer" style="border:none; padding: 3px 0px 0px 0px;">
-                    <button onclick="enroll()"   type="button" class="btn btn-primary" >Enroll</button>
-                    <button id="checkout" type="button" data-bs-toggle="modal" data-bs-target="#modal3" style="visibility:hidden" name="button"></button>
-                  </div>
-                  <p id="warningSelectCourse"></p>
-
-                  <div class="">
-                    <h5 class="modal-header">Course Description</h5>
-                    <p> <b>Platform: </b> Zoom <span style="font-size: 10px">**Meeting Link sent after enrollment**</span> </p>
-                    <p><b>Course Title:</b> Intro to Python</p>
-                    <p> <b>Class Size:  </b> 12</p>
-                    <p> <b>Price:  </b> $200</p>
-                    <p> <b>Course Length: </b> 10 Sessions</p>
-                    <p> <b>Requirments:</b> Zoom - Video Conference software; Computer (Mac/Linux/Windows) made within the last seven years.</p>
-                    <p><b> Description: </b>
-
-                      In this Course, students will learn how to use a text-based programming language called Python. As of June 1st, 2022, Python has become the most popular coding language, and is used for web development, business automation, AI, and machine learning. Many major companies such as Google, Pixar, Netflix, Facebook, and Spotify build their products using Python. <br> <br> In this course, students will be introduced to the basics of this multi-dimensional language, as well as learn concepts and common terminology  applicable to Computer Science as a whole, including functions, variables, data types, loops, and operators.
-                           Students will gain an understanding of Python by coding up solutions to real-world problems, led by an experienced software engineer as their instructor. Python is a great starter language for dipping your toes into coding for the first time, as the skills learned in this language seamlessly transfer to other programming languages.
-
-                    </p>
-                  </div>
-
-
-                </div>
-
-              </div>
             </div>
-        </div>
+            <!-- List Page -->
+            <div class="listPage">
 
 
-              <!-- Scrollable modal -->
-      <div id="modal2" class="modal fade" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" >
-            <div class="modal-content" style="background: rgba( 255, 255, 255, 0.75 );
-                      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-                      backdrop-filter: blur( 20px );
-                      -webkit-backdrop-filter: blur( 20px );
-                      border-radius: 10px;
-                      border: 1px solid rgba( 255, 255, 255, 0.18 );">
-              <div class="modal-header">
-                <h5 class="modal-title">Legal</h5>
-                <button onclick="gotopayments()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="container">
-                  <h5>Terms of Service</h5>
-                  <br>
-                  <p>  Please read these Terms and Conditions ("Terms") carefully before using the www.phostrino.com website and related products (collectively "Phostrino", “we”, “us”, or “our”).
-                    Access to and use of Phostrino is contingent upon acceptance of and compliance with these Terms. Terms apply to all visitors, users, and others who wish to access or use Phostrino. Anyone accessing or using Phostrino is agreeing to be bound by these Terms. If you disagree with any part of the Terms then you do not have permission to access Phostrino.
-                  </p>
-
-                  <h5>Purchases</h5>
-                  <br>
-                  <p> If you intend to purchase any product or service made available through Phostrino, you may be asked to supply certain information relevant to the purchase of product or service including, without limitation, your credit card number, the expiration date of your credit card, and your billing address. Credit card information is always encrypted during transfer over networks.</p>
-                  ‍
-                  <p>You represent and warrant that: (i) you have the legal right to use any credit card(s) or other payment method(s) in connection with the purchase; and that (ii) the information you supply to us is true, correct, and complete.</p>
-
-                  <p>Phostrino may employ the use of third-party services for the purpose of facilitating payment and the completion of any purchase. By submitting your information, you grant us the right to provide the information to these third parties subject to our Privacy Policy.</p>
-                  ‍
-                  <p>We reserve the right to refuse or cancel your order at any time for reasons including but not limited to product or service availability, errors in the description or price of the product or service, error in your order or other reasons.</p>
-                  ‍
-                  <p>We reserve the right to refuse or cancel your order if we have reason, in our sole discretion, to suspect fraud or an unauthorized or illegal transaction is suspected.</p>
-
-                  <h5>Coure Fees</h5>
-                  <br>
-                  <p>
-                  A valid payment method, such as a credit card is required to process the payment for your Course Fee. You shall provide Phostrino with accurate and complete billing information including, but not limited to, full name, address, state, zip code, telephone number, and a valid payment method information. By submitting such payment information, you automatically authorize Phostrino to charge all Course fees incurred through your account to any such payment instruments. <br> <br>
-
-                  Phostrino does and will not process charges that use an incorrect, expired, or over-the-limit credit card. We will try to contact you if this occurs. If you fail to pay any fees or charges when due, services or privileges may be suspended or terminated. You shall be responsible and liable for any fees, including attorneys' fees and collection costs, that we may incur in its efforts to collect any unpaid balances from you. Should automatic billing fail to occur for any reason, Phostrino will issue an electronic invoice indicating that you must proceed manually, within a certain deadline date, with the full payment corresponding to the billing period as indicated on the invoice. </p>
-
-                  <h5>Fee Changes</h5>
-                  <br>
-                  <p>
-                    Phostrino at any time may modify the Course fees for the Subscriptions. Any Course fee change will become effective at the end of the then-current Billing Cycle.
-                    <br><br>
-                    Phostrino will provide you with a reasonable prior notice of any change in Course fees to give you an opportunity to modify or terminate before such change becomes effective.
-                    <br><br>
-                    Your continued use of Phostrino after the Course fee change comes into effect constitutes your agreement to pay the modified Course fee amount.
-                  </p>
+                  <div style="margin-bottom: 9vh;" class="hrs"></div>
+                  <div style="position:relative; width: 100%;" instance_id="1pododdsis" class="clothing_instance">
+                        <div class="circle profil_pic_offset" style="margin-bottom:20px;">
+                              <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                              <div style="position:relative">
+                                    <p style="position: absolute;top: -26px;left: 53px;z-index: 80;color: black;width: 131px;">Kenna Alden </p>
+                                    <!-- cap name length   -->
+                              </div>
+                        </div>
 
 
-                  <h5>Refunds</h5>
-                  <br>
-                  <p>All sales are final. Phostrino will have sole discretion to consider refund requests on a case-by-case basis and determine refunds.</p>
+                        <div style="display: flex; flex-direction: column; position: relative " class="carousel">
 
-                  <h5>Accounts</h5>
-                  <br>
-                  <p>
-                    When you create an account with us, you guarantee that you are above the age of eighteen (18) and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on Phostrino.
-                    <br> <br>
-                    You are responsible for maintaining the confidentiality of your account and password, including but not limited to the restriction of access to your computer and/or account. You agree to accept responsibility for any and all activities or actions that occur under your account and/or password. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.
-                    <br> <br>
-                    Phostrino reserves the right to refuse service, terminate accounts, remove or edit content, or cancel orders in our sole discretion.
-                  </p>
+                              <ul class="carousel__list">
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130370060107_041_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="0">0</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/80572654_070_b15?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="1">1</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130916210123_001_b2?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="2">2</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130464030212_041_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="3">3</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130464030211_065_b14?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="4">4</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130916210126_009_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="5">5</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/68945401_001_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="6">6</li>
+                              </ul>
 
-
-                  <h5>Availability, errors, and inaccuracies</h5>
-                  <br>
-                  <p>
-                    We are constantly updating product and service offerings on Phostrino. We may experience delays in updating information on Phostrino and in our advertising on other websites. The information found on Phostrino may contain errors or inaccuracies and may not be complete or current. Products or services may be mispriced, described inaccurately, or unavailable on Phostrino and we cannot guarantee the accuracy or completeness of any information found on Phostrino.
-                    <br> <br>
-                    We, therefore reserve the right to change or update information and to correct errors, inaccuracies, or omissions at any time without prior notice.
-
-                  </p>
-
-                  <h5>Intellectual property</h5>
-                  <br>
-                  <p>
-                    Phostrino and its original content, features, and functionality are and will remain the exclusive property of Phostrino and its licensors. Phostrino is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Phostrino.
-                    <br> <br>
-                    The trademarks and trade dress of Phostrino are proprietary to us and may not be used by you for any reasons other than as expressly permitted by these terms. All website content, design, text, graphics, and interfaces; the collection, selection, and arrangement thereof; and all software are property of, or duly licensed to, us. Any other use of materials on Phostrino, including modification, distribution, or reproduction for purposes other than those noted above, without the prior written permission of Phostrino, is strictly prohibited. You acknowledge that Phostrino and/or third-party content providers remain the owners of all website materials and that you do not acquire any of those ownership rights by downloading, copying, or using any such material in accordance with these Terms. Phostrino may discontinue or remove the website, or any portion thereof, or discontinue your right to use the website, or any portion thereof, at any time.
-
-                  </p>
+                              <div class="carousel_button_right" style=" ">
+                                    <!-- https://iconscout.com/color-editor?redirect=https%3A%2F%2Ficonscout.com%2Fcolor-editor%3Fstate%3DXQAAAALNAAAAAAAAAABt__34xfyFCKftZ4F6qE413o9eYLv51foe6Tsjj7ktro4ueW1N4cybGD70Q1LFNkZNdBFACD4KN8ddwno57yQvC1PusVjr67Tw3lqHxErupj6BgWf9gxiL7-7smgdygA2NtTqrx1VmRcICtI4dA2CVtIvTAbrWM7o2XqdQ75xAok-IkU8dZNOp6rqM2Skcw5UhYoVn3ba85q3EP6Ad-D6DWH_bMo3x8dHUl5WgAjIkW4kgFhX_sedAAA%20 -->
+                                    <!-- <div class="eyes" style="margin-top: 20px;">
+              <p>80</p>
+              <img src="img/eye-svgrepo-com.svg" style="height: 20px;width: 20px; ">
+            </div> -->
 
 
-                  <h5>Prohibited Use</h5>
-                  <br>
-                  <p>
-                    In addition to other prohibitions as set forth in the Terms of Service, you are prohibited from using Phostrino or its content: (a) for any unlawful purpose; (b) to solicit others to perform or participate in any unlawful acts; (c) to violate any international, federal, provincial or state regulations, rules, laws, or local ordinances; (d) to infringe upon or violate our intellectual property rights or the intellectual property rights of others; (e) to harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability; (f) to submit false or misleading information; (g) to upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of Phostrino or of any related website, other websites, or the Internet; (h) to collect or track the personal information of others; (i) to spam, phish, pharm, pretext, spider, crawl, or scrape; (j) for any obscene or immoral purpose; or (k) to interfere with or circumvent the security features of Phostrino or any related website, other websites, or the Internet. We reserve the right to terminate your use of Phostrino or any related website for violating any of the prohibited uses.
-                  </p>
+                                    <div class="like_button" like_count="1000" liked="false" style="margin-top: 20px;">
+                                          <p>50</p>
+                                          <img src="img/like-svgrepo-com.svg" style="height: 20px;width: 20px;  ">
+                                    </div>
 
-                  <h5>Termination</h5>
-                  <br>
-                  <p>
-                    If you wish to terminate your account, you may do so at any time. You will be responsible for any outstanding charges associated with your account, including classes scheduled for the remainder of the Billing Cycle.
-                    <br><br>
-                    We may terminate or suspend your account and bar access to Phostrino immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
-                    <br><br>
-                    All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
-
-                  </p>
-
-                  <h5>Indemnification</h5>
-                  <br>
-                  <p>
-                    You agree to release, defend, indemnify and hold harmless Phostrino and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of a) your use and access of Phostrino, by you or any person using your account and password or b) a breach of these Terms.
-
-                  </p>
-
-                  <h5>Limitation of liability</h5>
-                  <br>
-                  <p>
-                    In no event shall Phostrino, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use Phostrino; (ii) any conduct or content of any third party on Phostrino; (iii) any content obtained from Phostrino; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.
-                  </p>
-
-                  <h5>Disclaimer</h5>
-                  <br>
-                  <p>
-                  Your use of Phostrino is at your sole risk. Phostrino is provided on an "AS IS" and "AS AVAILABLE" basis. Phostrino is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.
-                  <br> <br>
-                  Phostrino and its subsidiaries, affiliates, and its licensors do not warrant that a) Phostrino will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) Phostrino is free of viruses or other harmful components; or d) the results of using Phostrino will meet your requirements.
-                  </p>
-
-                  <h5>Exclusions</h5>
-                  <br>
-                  <p>
-                    Some jurisdictions do not allow the exclusion of certain warranties or the exclusion or limitation of liability for consequential or incidental damages, so the limitations above may not apply to you depending on your location.
-                  </p>
-
-                  <h5>Governing Law</h5>
-                  <br>
-                  <p>
-                    These Terms shall be governed and construed in accordance with the laws of the City of Austin, Travis County, the state of Texas, and the United States, without regard to its conflict of law provisions.
-                    <br> <br>
-                    Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding Phostrino, and supersede and replace any prior agreements we might have had between us regarding Phostrino.
-
-                  </p>
-
-                  <h5>Severability</h5>
-                  <br>
-                  <p>
-                    In the event that any provision of these Terms of Service is determined to be unlawful, void or unenforceable, such provision shall nonetheless be enforceable to the fullest extent permitted by applicable law, and the unenforceable portion shall be deemed to be severed from these Terms and Conditions. Such determination shall not affect the validity and enforceability of any other remaining provisions.
-                  </p>
-
-                  <h5>Updates to our terms</h5>
-                  <br>
-                  <p>
-                    We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If we make a material revision to our Terms, we will provide at least thirty (30) days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
-                    <br> <br>
-                    By continuing to access or use Phostrino after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use Phostrino.
-
-                  </p>
-
-                  <h5>Privacy Policy</h5>
-                  <br>
-                  <p>
-                    Phostrino takes its privacy and the privacy of our users very seriously. We must collect certain information about you, your family, or your ward so we can provide all of you with a rewarding, safe, and secure environment. As a trusted provider, we understand you have entrusted Phostrino with your personal information so we will do everything in our power to ensure that your data is stored safely and securely.
-                  </p>
-
-                  <h5>User Consent</h5>
-                  <br>
-                  <p>
-                    You are consenting to this Privacy Policy by using this website. If you do not agree to this Privacy Policy do not use the website.
-                  </p>
-
-                  <h5>What information we collect</h5>
-                  <br>
-                  <p>
-                    When you use the phostrino.com website and/or any related products, we collect two types of information: directly-provided information and automatically-connected information
-                  </p>
-
-                  <h5>Directly-provided information:</h5>
-                  <p>
-                    This includes information such as parent and guardian names, phone numbers, emails addresses, student information including but not limited to school, date of birth, allergy and medical information. Some of this information (as indicated when relevant), is required to manage our operations. Other information, such as demographic information and child interests, is optional and you only need to provide it if you wish. We use this information to better understand and serve our customers.
-                  </p>
-
-                  <h5>Automatically-connected information:</h5>
-                  <p>
-                    This includes information that is received by our server from your browser such as IP address and cookies. Cookies are digital identifiers that allow our website to recognize your computer or mobile devices as you log in or out and move between different pages. You may be able to change the settings of your browser to limit your device’s acceptance of cookies, but this will prevent you from properly using our website. We also collect and aggregate data to understand usage patterns and traffic on our website, but this data cannot be used to identify you personally. If using a mobile app we might collect mobile device ID.
-                  </p>
-
-                  <h5>How we use your information</h5>
-                  <br>
-                  <p>
-                    We will use your information in a number of ways, including but not limited to: <br>
-                    To provide our services to you, to communicate to you about your use of the services, to respond to inquiries, to fulfill your orders, and for other customer service purposes Understanding our customers and managing business operations (for example, determining who to contact in the event of an emergency and knowing who can pick up your child) <br>
-                    Improving the products and services available to our customers <br>
-                    Tracking performance and progress of those using our products and services <br>
-                    Sending periodic, non-spam related marketing emails about classes, camps, or special programs <br>
-                    To comply with applicable legal obligations, including responding to a subpoena or court order <br>
-                    In the context of a merger or acquisition and some or all of our assets are transferred to another company <br>
-                    Where we believe it is necessary to investigate, prevent or take action regarding illegal activities or suspect fraud <br>
-                    Unless necessary for certain items listed above, we do not use personally identifiable information and instead rely on aggregated data <br>
-
-                  </p>
+                                    <div class="dislike_button" dislike_count="1000" disliked="false" style="margin-top: 20px;">
+                                          <p>60</p>
+                                          <img src="img/like-svgrepo-com.svg" style="height: 20px;width: 20px; transform: rotateZ(180deg);  ">
+                                    </div>
 
 
-                  <h5>How information is stored</h5>
-                  <br>
-                  <p>
-                    The information is encrypted and stored on our internal systems, which can only be accessed with the proper credentials.
-                    We have implemented commercially reasonable precautions to protect the information we collect from loss, misuse, and unauthorized access, disclosure, alteration, and destruction. Please be aware that despite our best efforts, no data security measures can guarantee security. If you believe a third party has accessed your information, please contact us immediately at support@phostrino.com.
-                    <br> <br>
-                    We strongly encourage you to take steps to protect against unauthorized access to your password, phone, and computer by, among other things, signing off after using a shared computer, choosing a robust password that nobody else knows or can easily guess, and keeping your log-in and password private. We are not responsible for any lost, stolen, or compromised passwords or for any activity on your account via unauthorized password activity.
+                              </div>
 
-                  </p>
+                              <div style="text-align:center; margin-top:35px;">
+                                    <p style=""> <b> <i>Anthropologie</i> </b> </p>
+                                    <p>Angel Alarcon Ankle-Strap Heels</p>
+                                    <p><b> $198.00</b></p>
+                                    <!--  only on single image  -->
 
+                                    <div style="display:flex; justify-content: space-around; margin-top: 20px;">
+                                          <div class="carousel__tag carousel__tag_add">
+                                                <p style="font-size: 13px;">Save Outfit </p>
+                                          </div>
 
-                  <h5>Your rights</h5>
-                  <br>
-                  <p>
-                    You can always opt not to disclose your personal information to us, but please keep in mind that certain information is required during registration. These required fields will be indicated whenever applicable. You may review, add, update, or delete any of your personal information at any time.
-                    You may request deletion of your account by sending written notice to support@phostrino.com. Please note that some basic information may remain in our records after even after deletion of your account.
-                    We may use aggregated data derived from your family’s, and/or your ward’s personal information after you update or delete it, but not in a manner that will allow you to be personally identified.
-                  </p>
+                                          <div class="carousel__tag carousel__tag_add">
+                                                <p style="font-size: 13px;">WishList </p>
+                                          </div>
 
 
-                  <h5>What is shared with third parties</h5>
-                  <br>
-                  <p>
-                    We may share your information, including personal information, as follows:
-                    Affiliates. We may disclose the information we collect from you to our affiliates or subsidiaries; however, if we do so, their use and disclosure of your personally identifiable information will be subject to this Policy.
-                    Service Providers. We may disclose the information we collect from you to third-party vendors, service providers, contractors or agents who perform functions on our behalf, such as payment processors.
-                    Business Transfers. If we are acquired by or merged with another company we may transfer the information we have collected from you to the other company.
-                    In Response to Legal Process. We also may disclose the information we collect from you in order to comply with the law, a judicial proceeding, court order, or other legal process, such as in response to a court order or a subpoena.
-                    To Protect Us and Others. We also may disclose the information we collect from you where we believe it is necessary to investigate, prevent, or take action regarding illegal activities or suspected fraud.
+                                    </div>
 
-                  </p>
-
-                  <h5>Third-party links</h5>
-                  <br>
-                  <p>
-                    The website may contain links to third-party websites. Any access to any use of such linked websites is not governed by this privacy policy but is instead governed by the privacy policies of those third-party websites. We are not responsible for the information practices of such third-party websites.
-                  </p>
-
-                  <h5>Minor Children</h5>
-                  <br>
-                  <p>
-                    Our website is not meant to sell products or services to children and we do not knowingly solicit or collect personal information from children. If you are under the age of 18, you may only use the website with the supervision of your parent or guardian.
-
-                  </p>
-
-                  <h5>Updates to this privacy policy</h5>
-                  <br>
-                  <p>
-                    We last updated our Privacy Policy on July 9, 2022. <br> <br>
-                    We may amend this Privacy Policy from time to time. If we decide to make any material changes, they will be posted on our website.
-
-                  </p>
-
-                  <h5>Questions?</h5>
-                  <br>
-                  <p>
-                    If you have any questions or concerns regarding our Privacy Policy, please send us a detailed message at support@phostrino.com, and we will try to resolve your concerns.
-
-                  </p>
-
-                </div>
+                                    <p style="color:grey; margin-top: 20px;"> <i>Promoted</i> </p>
 
 
 
+                              </div>
+                        </div>
+
+                  </div>
+
+                  <div style="margin-bottom: 9vh;" class="hrs"></div>
+                  <div style="position:relative; width: 100%;" instance_id="1pododdsis" class="clothing_instance">
+                        <div class="circle profil_pic_offset" style="margin-bottom:20px;">
+                              <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                              <div style="position:relative">
+                                    <p style="position: absolute;top: -26px;left: 53px;z-index: 80;color: black;width: 131px;">Kenna Alden </p>
+                                    <!-- cap name length   -->
+                              </div>
+                        </div>
+
+
+                        <div style="display: flex; flex-direction: column; position: relative " class="carousel">
+
+                              <ul class="carousel__list">
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130370060107_041_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="0">0</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/80572654_070_b15?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="1">1</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130916210123_001_b2?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="2">2</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130464030212_041_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="3">3</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130464030211_065_b14?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="4">4</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130916210126_009_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="5">5</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/68945401_001_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="6">6</li>
+                              </ul>
+
+                              <div class="carousel_button_right" style=" ">
+                                    <!-- https://iconscout.com/color-editor?redirect=https%3A%2F%2Ficonscout.com%2Fcolor-editor%3Fstate%3DXQAAAALNAAAAAAAAAABt__34xfyFCKftZ4F6qE413o9eYLv51foe6Tsjj7ktro4ueW1N4cybGD70Q1LFNkZNdBFACD4KN8ddwno57yQvC1PusVjr67Tw3lqHxErupj6BgWf9gxiL7-7smgdygA2NtTqrx1VmRcICtI4dA2CVtIvTAbrWM7o2XqdQ75xAok-IkU8dZNOp6rqM2Skcw5UhYoVn3ba85q3EP6Ad-D6DWH_bMo3x8dHUl5WgAjIkW4kgFhX_sedAAA%20 -->
+                                    <!-- <div class="eyes" style="margin-top: 20px;">
+              <p>80</p>
+              <img src="img/eye-svgrepo-com.svg" style="height: 20px;width: 20px; ">
+            </div> -->
+
+
+                                    <div class="like_button" like_count="1000" liked="false" style="margin-top: 20px;">
+                                          <p>50</p>
+                                          <img src="img/like-svgrepo-com.svg" style="height: 20px;width: 20px;  ">
+                                    </div>
+
+                                    <div class="dislike_button" dislike_count="1000" disliked="false" style="margin-top: 20px;">
+                                          <p>60</p>
+                                          <img src="img/like-svgrepo-com.svg" style="height: 20px;width: 20px; transform: rotateZ(180deg);  ">
+                                    </div>
+
+
+                              </div>
+
+                              <div style="text-align:center; margin-top:35px;">
+                                    <p style=""> <b> <i>Anthropologie</i> </b> </p>
+                                    <p>Angel Alarcon Ankle-Strap Heels</p>
+                                    <p><b> $198.00</b></p>
+                                    <!--  only on single image  -->
+
+                                    <div style="display:flex; justify-content: space-around; margin-top: 20px;">
+                                          <div class="carousel__tag carousel__tag_add">
+                                                <p style="font-size: 13px;">Save Outfit </p>
+                                          </div>
+
+                                          <div class="carousel__tag carousel__tag_add">
+                                                <p style="font-size: 13px;">WishList </p>
+                                          </div>
+
+
+                                    </div>
+
+                                    <p style="color:grey; margin-top: 20px;"> <i>Promoted</i> </p>
 
 
 
-              </div>
+                              </div>
+                        </div>
+
+                  </div>
+
+
+
+                  <div style="margin-bottom: 9vh;" class="hrs"></div>
+                  <div style="position:relative; width: 100%;" instance_id="1pododdsis" class="clothing_instance">
+                        <div class="circle profil_pic_offset" style="margin-bottom:20px;">
+                              <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+                              <div style="position:relative">
+                                    <p style="position: absolute;top: -26px;left: 53px;z-index: 80;color: black;width: 131px;">Kenna Alden </p>
+                                    <!-- cap name length   -->
+                              </div>
+                        </div>
+
+
+                        <div style="display: flex; flex-direction: column; position: relative " class="carousel">
+
+                              <ul class="carousel__list">
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130370060107_041_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="0">0</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/80572654_070_b15?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="1">1</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130916210123_001_b2?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="2">2</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130464030212_041_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="3">3</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130464030211_065_b14?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="4">4</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/4130916210126_009_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="5">5</li>
+                                    <li style='background: url("https://images.urbndata.com/is/image/Anthropologie/68945401_001_b?$an-category$&qlt=80&fit=constrain") no-repeat;
+           background-size: cover;' class="carousel__item detail_modal" data-pos="6">6</li>
+                              </ul>
+
+                              <div class="carousel_button_right" style=" ">
+
+
+
+                                    <div class="like_button" like_count="1000" liked="false" style="margin-top: 20px;">
+                                          <p>50</p>
+                                          <img src="img/like-svgrepo-com.svg" style="height: 20px;width: 20px;  ">
+                                    </div>
+
+                                    <div class="dislike_button" dislike_count="1000" disliked="false" style="margin-top: 20px;">
+                                          <p>60</p>
+                                          <img src="img/like-svgrepo-com.svg" style="height: 20px;width: 20px; transform: rotateZ(180deg);  ">
+                                    </div>
+
+
+                              </div>
+
+                              <div style="text-align:center; margin-top:35px;">
+                                    <p style=""> <b> <i>Anthropologie</i> </b> </p>
+                                    <p>Angel Alarcon Ankle-Strap Heels</p>
+                                    <p><b> $198.00</b></p>
+                                    <!--  only on single image  -->
+
+                                    <div style="display:flex; justify-content: space-around; margin-top: 20px;">
+                                          <div class="carousel__tag carousel__tag_add">
+                                                <p style="font-size: 13px;">Save Outfit </p>
+                                          </div>
+
+                                          <div class="carousel__tag carousel__tag_add">
+                                                <p style="font-size: 13px;">WishList </p>
+                                          </div>
+
+
+                                    </div>
+
+                                    <p style="color:grey; margin-top: 20px;"> <i>Promoted</i> </p>
+
+
+
+                              </div>
+                        </div>
+
+                  </div>
+
 
             </div>
-          </div>
-      </div>
 
-      <div id="modal3" class="modal fade" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" >
-            <div class="modal-content" style="background: rgba( 255, 255, 255, 0.75 );
-                      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-                      backdrop-filter: blur( 20px );
-                      -webkit-backdrop-filter: blur( 20px );
-                      border-radius: 10px;
-                      border: 1px solid rgba( 255, 255, 255, 0.18 );">
-              <div class="modal-header">
-                <h5 id="EnrollmentHeader" class="modal-title">Enrollment</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <div id="paymentContainer" class="container">
-                  <div id="courseInfo">
+            <!-- profile Page -->
+            <div style=" width: 100vw;display: block;  margin-left: auto;  margin-right: auto;  overflow: hidden;" class="profilePage">
+                  <div style="width: 100vw; margin-left: auto; margin-right: auto; display:flex; flex-direction: column; text-align: center; align-items: center;">
+                        <div class="profilePageProfilePic">
+                              <svg width="48px" height="48px">
+                                    <circle cx="24" cy="24" r="14" stroke="black" stroke-width="5" fill="black" />
+                                    <text class="profilePageUserImg" fill="white" font-size="14" font-family="Verdana" x="24" y="24" text-anchor="middle" dominant-baseline="central"></text>
+                              </svg>
+                        </div>
 
-<!--
-                  <p> <b>Platform: </b> Zoom <span style="font-size: 10px">**Meeting Link sent after enrollment**</span> </p>
-                  <p><b>Course Title:</b> <span>Intro to Python</span> </p>
-                  <p> <b>Class Size:  </b> <span>12</span> </p>
-                  <p> <b>Length: </b> <span>10 Sessions</span> </p>
-                  <p> <b>Days:  </b> <span>T Th Fri</span></p>
-                  <p> <b>Class Time:  </b> <span>6:30 - 7:30EST</span> </p>
-                  <p> <b>Dates:  </b>  <span>06.06.22 - 07.08.22</span> </p>
-                  <p> <b>Price:  </b> <span>  $200</span></p>
-
-                  <p> <b>Requirments:</b> Zoom - Video Conference software; Computer (Mac/Linux/Windows) made within the last seven years.</p>
-
-                  <p> <b>Refund:</b> Fulfilled up to 24 hrs  <b>after</b> the first class. <b>3% Processing Fee</b></p> -->
-
-                  </div>
-
-                  <form id="StudentInfoForm">
-                    <h5>Student Info</h5>
-                    <div class="mb-3">
-                      <label for="stname" class="Label"> Student Name</label>
-                      <input type="text" class="form-control" id="stname" aria-describedby="emailHelp" placeholder="Jane Doe">
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="Label">Email Address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="@">
-                    </div>
-
-                    <div class="mb-3">
-                      <label for="exampleInputEmail2" style="font-size:0.93rem;" class="Label"> Confirm Email Address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="@">
-                    </div>
-
-
-                    <div class="mb-3 form-check">
-                      <div  style="display:flex;  justify-content: space-between;">
                         <div class="">
-                            <label onclick="showterms()" style=" padding: 0px;line-height: 0;"  class="form-check-label btn btn-link" for="exampleCheck1">Agree to Terms of Service</label>
+                              <p class="profilePageUserName">User Name </p>
+                        </div>
+                        <div style="display:flex; justify-content: space-between; width: 300px ; margin-top: 30px; margin-left: auto; margin-right: auto;" class="profilePageFollowFollowersCount">
+                              <div style="cursor:pointer;" class="profilePageFollowing">
+                                    <p>Following: <b>233</b> </p>
+                              </div>
 
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+
+                              <div style="cursor:pointer;" class="profilePageFollowers">
+                                    <p>Followers: <b>123</b>
+                                    </p>
+
+                              </div>
+                        </div>
+
+                        <div style="text-align: center; margin:20px;" class=" profilePageLink">
 
                         </div>
-                      </div>
-                    </div>
+
+                        <div style="    display: flex;  justify-content: center;  width: 220px;" class="">
+                              <div style="text-align: center;" class="carousel__tag profilePageFollowEditProfile">
+                                    <p>Follow</p>
+                                    <p>Edit Profile </p>
+                                    <p>Unfollow</p>
+                              </div>
+
+                              <div style=" background-color: white; color: black;    margin-left: 10px;" class="signOut carousel__tag">
+                                    Sign Out
+                              </div>
+
+                        </div>
 
 
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                      <label class="form-check-label" for="exampleCheck2">Acknowledge student age: <b><span id="courseAge">18+</span></b> </label>
-                    </div>
+                        <div class="hrs"></div>
 
 
-                  </form>
-                  <div id="paymentHeader" >
-                    <h5 >Payment </h5>
+                        <div style="display:flex; flex-direction: column; height: 56vh;   justify-content: space-around; " class="">
+                              <div style="color:black;background-color: white; text-align: center; box-shadow: none; " class="carousel__tag profilePageOutfit">
+                                    <p>
+                                          <b>Outfits</b>
+                                    </p>
+                              </div>
+
+                              <div style="color:black;background-color: white; text-align: center; box-shadow: none;" class="carousel__tag profilePageLikes">
+                                    <p> <b>Likes</b> </p>
+                              </div>
+
+                              <div style="position: relative;color:black;background-color: white; text-align: center; box-shadow: none;" class="carousel__tag profilePageNotifications">
+                                    <div class="notification_alert">
+                                          <p>1</p>
+                                    </div>
+                                    <p> <b>Notifications</b> </p>
+                              </div>
+
+                              <div style="color:black;background-color: white; text-align: center; box-shadow: none;" class="carousel__tag profilePageAffliate hideSignIn">
+                                    <b>Affiliate Profile</b>
+                              </div>
+                        </div>
+
                   </div>
-                    <!-- Display a payment form -->
-                     <form id="payment-form">
-                       <div id="payment-element">
-                         <!--Stripe.js injects the Payment Element-->
-                       </div>
-                       <button id="submit">
-                         <div class="spinner hidden" id="spinner"></div>
-                         <span id="button-text" class="btn btn-primary" style="margin-left: auto; margin-right:auto;">Pay now</span>
-                       </button>
-                       <div id="payment-message"  class="hidden"></div>
-                     </form>
-                   </div>
 
-              </div>
+                  <div class="profilePageCarouselList">
+
+                  </div>
 
             </div>
-          </div>
-      </div>
+
+            <div class="banner doNotClose">
+                  <div class="doNotClose" style="position:relative; width: 100%;">
+                        <div class="banner_x doNotClose">
+                              x
+                        </div>
+                        <div class="doNotClose">
+                              <p class="doNotClose" style="text-align: center;">Phostrino</p>
+                        </div>
+                  </div>
+            </div>
 
 
-      </div>
-      <script
-    src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  <script src="js/createUI.js"></script>
-  <script src="js/main.js"></script>
-  </body>
+            <div class="signIn hideSignIn">
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_s">
+                              <p style="cursor: pointer;"> x</p>
+
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: center; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:20px; margin-left: auto; margin-right: auto;">
+                              <h2>Sign In</h2>
+
+                        </div>
+
+                        <div style="margin:20px; margin-left: auto; margin-right: auto;">
+                              <input autocomplete="off" id="signInEmail" class="signin_input" type="email" placeholder="Email" name="" value="">
+
+                        </div>
+
+                        <div style="margin:20px; margin-left: auto; margin-right: auto; ">
+                              <input autocomplete="off" id="signInPassword" class="signin_input" type="password" placeholder="Password" name="" value="">
+
+                        </div>
+
+
+                        <div style="margin:20px; margin-left: auto; margin-right: auto;  display: flex; justify-content: center; width:100%; margin:left:20px;">
+                              <p class="phos_sign_up" style="cursor: pointer;text-decoration: underline;  margin-right: 10px; ">Sign Up</p>
+                              <p class="phos_forgot_password" style="cursor: pointer;text-decoration: underline; margin-left: 10px;">Forgot Password</p>
+                        </div>
+
+                        <div style="margin:20px; margin-left: auto; margin-right: auto;">
+                              <div class="signin__tag doNotClose">
+                                    <p class="doNotClose" style="text-align: center;">Sign In</p>
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+
+            <div class="signUp hideSignIn">
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_sup">
+                              <p style="cursor: pointer;"> x</p>
+
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: center; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto;">
+                              <h2 class="signUpTitle">Sign Up</h2>
+                        </div>
+
+
+                        <div style="margin:10px; margin-left: auto; margin-right: auto;">
+                              <input autocomplete="off" id="signUpUserName" class="signin_input" type="text" placeholder="Username" name="" value="">
+                        </div>
+
+                        <div class="emailSignUp" style="margin:10px; margin-left: auto; margin-right: auto;">
+                              <input autocomplete="off" id="signUpEmail" class="signin_input" type="email" placeholder="Email" name="" value="">
+                        </div>
+
+                        <div style="margin:10px; margin-left: auto; margin-right: auto; ">
+                              <input autocomplete="off" id="signUpPassword" class="signin_input" type="password" placeholder="Password" name="" value="">
+
+                        </div>
+
+                        <div style="margin:10px; margin-left: auto; margin-right: auto; ">
+                              <input autocomplete="off" id="signUpPasswordConfirm" class="signin_input" type="password" placeholder="Confirm Password" name="" value="">
+                        </div>
+
+                        <div style="margin:10px; display: none; margin-left: auto; margin-right: auto; ">
+                              <input autocomplete="off" id="signUpBio" class="signin_input" type="text" placeholder="Link to Social" name="" value="">
+                        </div>
+
+
+                        <!-- <div class="signUpBirth" style="margin:10px; margin-left: auto; margin-right: auto; ">
+          <label for="birth">Birth Date:</label>
+          <input autocomplete="off" type="date" id="birth" name="trip-start" value="2018-07-22" min="1945-01-01" max="2004-12-31">
+
+        </div> -->
+
+                        <!-- <div class="signUpGender" style="margin:10px; margin-left: auto; margin-right: auto; ">
+          <label for="gen">Gender:</label>
+          <select name="gen" id="gender">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+            <option value="O">Other</option>
+          </select>
+        </div> -->
+                        <!--
+        <div class="signUpGenderAgreement" style="margin:10px; margin-left: auto; margin-right: auto; ">
+          <input type="checkbox" name="terms" id="terms"> <a>I Agree Terms & Coditions</a>
+        </div> -->
+
+
+                        <div style="margin:10px; margin-left: auto; margin-right: auto;">
+                              <div class="signup__tag doNotClose">
+                                    <p class="doNotClose saveEdit" style="text-align: center;">Sign Up</p>
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+
+            <div class="reset_passw hideSignIn">
+
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_reset">
+                              <p style="cursor: pointer;"> x</p>
+
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: center; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto;">
+                              <h2>Reset Password</h2>
+                        </div>
+
+                        <div style="margin:10px; margin-bottom: 20px; margin-left: auto; margin-right: auto;">
+                              <input autocomplete="off" id="resetEmail" class="signin_input" type="email" placeholder="Email" name="" value="">
+                        </div>
+
+
+                        <div style="margin:10px; margin-left: auto; margin-right: auto;">
+                              <div class="reset__tag doNotClose">
+                                    <p class="doNotClose" style="text-align: center;">Reset</p>
+                              </div>
+                        </div>
+
+                  </div>
+
+            </div>
+
+            <div class="filter_modal hideSignIn">
+
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_filter">
+                              <p style="cursor: pointer;"> x</p>
+
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: center; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto;">
+                              <h2>Filter </h2>
+                        </div>
+
+                        <div class="filter_gender" style="margin:10px;  margin-left: auto; margin-right: auto; display: flex; justify-content: space-around;">
+                              <!-- add event listenrs to button  -->
+                              <div gen="women" class="filter__tag_f phone_filter__tag_f selected_filter doNotClose">
+
+                                    <p class="doNotClose" style="text-align: center;">Women</p>
+                              </div>
+
+                              <div gen="men" class="filter__tag_f phone_filter__tag_f doNotClose">
+                                    <p class="doNotClose" style="text-align: center;">Men</p>
+                              </div>
+
+                              <div gen="babies" class="filter__tag_f phone_filter__tag_f doNotClose">
+                                    <p class="doNotClose" style="text-align: center;">Babies</p>
+                              </div>
+                        </div>
+
+                        <div class="filter_articles" style="margin:10px;  margin-left: auto; margin-right: auto; display: flex; justify-content: space-around;">
+                              <!-- add event listenrs to button  -->
+                              <div choice="outfit" class="filter__tag_f selected_filter doNotClose">
+                                    <p class="doNotClose" style="text-align: center;">Outfits</p>
+                              </div>
+
+                              <div choice="item" class="selected_filter filter__tag_f  doNotClose">
+                                    <p class="doNotClose" style="text-align: center;">Item</p>
+                              </div>
+                        </div>
+
+                        <div class"filter_price" style="margin:10px;  margin-bottom: 0px; margin-left: auto; margin-right: auto; display: flex; justify-content: space-around;">
+                              <!-- add event listenrs to button  -->
+                              <div class="price_range selected doNotClose">
+                                    <div class="price_tool_tip">
+                                          <p id="price_low">$0</p>
+                                          <p id="price_high">$1000+</p>
+                                    </div>
+
+                                    <span class="multi-range">
+                                          <input type="range" min="0" max="1000" value="0" id="lower">
+
+                                          <input type="range" min="0" max="1000" value="1000" id="upper">
+                                    </span>
+
+
+                              </div>
+
+
+                        </div>
+
+
+                        <div class"filter_attributes" style="margin:10px; margin-left: auto; margin-right: auto; display: flex; justify-content: space-around;">
+                              <!-- add event listenrs to button  -->
+                              <div state="most" class="filter__tag_f  doNotClose likeClass">
+                                    <p class="doNotClose" style="text-align: center;">Likes</p>
+                              </div>
+
+
+                        </div>
+
+
+
+                        <div class"company" style="margin:10px;  margin-left: auto; margin-right: auto; display: flex; justify-content: space-around;">
+                              <!-- add event listenrs to button  -->
+                              <input class="filterAutoCompleteInput" autocomplete="off" id="company_filter" class="signin_input" type="text" placeholder="Company or Stylist" name="" value="" style="text-align:center;">
+                        </div>
+
+                        <div class="price-type hideSignIn" style="position:relative;">
+                              <div style="position:absolute; z-index:200;" class="typeahead_position">
+                                    <div class="typeahead_container">
+                                          <div inst="word1" class="typeaheadInstance ">
+                                                s <strong>d</strong>iny
+                                          </div>
+
+                                          <div inst="word2" class="typeaheadInstance ">
+                                                s <strong>d</strong>iny<strong>d</strong>
+                                          </div>
+
+
+                                    </div>
+                              </div>
+
+                        </div>
+
+                        <div style="margin:10px; margin-left: auto; margin-right: auto;">
+                              <div class="filter__tag doNotClose">
+                                    <p class="doNotClose" style="text-align: center;">Update</p>
+                              </div>
+                        </div>
+
+
+                  </div>
+
+            </div>
+
+            <div class="go_to_shop_modal hideSignIn" style="z-index:300">
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_shop">
+                              <p style="cursor: pointer;"> x</p>
+
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: center; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto; text-align: center;">
+                              <h2 id="goToShopElm"> </h2>
+                        </div>
+
+
+                  </div>
+
+            </div>
+
+
+            <div class="save_outfit_modal doNotClose hideSignIn" style="overflow-y: hidden; z-index: 6;">
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_saveOutfit">
+                              <p style="cursor: pointer;"> x</p>
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: flex-start; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto; text-align: center;     width: 100%;">
+                              <h2 class="add_to_outfit_modal_title"> Add to Outfits</h2>
+                              <!-- modal module  -->
+                              <div class="save_outfit_modal_main_outfit_list">
+                                    <div style="position: relative;min-height: 42px;">
+                                          <p style=" position: absolute;margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: center;" class="outFit_article_desc"></p>
+
+                                    </div>
+
+                                    <div class="" style="width: 100%;white-space: nowrap;overflow-x: auto;">
+                                          <div class="createOutfitButton" style="cursor: pointer; display: flex;width: 100%;white-space: nowrap;overflow-x: auto;justify-content: center;">
+                                                <h3 style="line-height: 2px; margin-right: 10px;">
+                                                      Create
+                                                </h3>
+                                                <p style="color: white;background-color: black;border-radius: 50%;width: 15px;height: 15px;line-height: 15px; margin-top: 12px;">
+                                                      +
+                                                </p>
+
+                                          </div>
+                                    </div>
+
+
+                                    <div class="outfit_list ">
+
+
+                                    </div>
+
+                              </div>
+                              <!--  Modal Modual  -->
+                              <div class="save_outfit_modal_list_outfitInstance hideSignIn">
+                                    <div style="cursor:pointer; margin:auto; width:30px; ; padding:0px; min-width: 103px; max-width:103px;    line-height: 29px;" class="save_outfit_modal_back carousel__tag">
+                                          <p>Back</p>
+                                    </div>
+
+                                    <h2 class="detail_outfit_name">Outfit Name</h2>
+                                    <div style="display:flex; justify-content: center; margin-bottom:10px;">
+                                          <div style="margin-right:10px; padding:0px;  min-width: 103px; max-width: 103px;     line-height: 29px; background-color:white; color:black; " class="carousel__tag delete_outfit_button_outfit_modal">
+                                                <p>Delete Outfit </p>
+                                          </div>
+                                          <div style="margin-left:10px; padding:0px; min-width: 103px; max-width:103px;    line-height: 29px; background-color:white; color:black;" class="carousel__tag edit_outfit_button_outfit_modal">
+                                                <p>Edit Outfit </p>
+                                          </div>
+                                    </div>
+
+                                    <div style="position:relative; width: 100%; overflow-y:auto; height: 369px;" class="outfit-article-List">
+                                          <!-- class="outfit-article-List" -->
+                                    </div>
+                              </div>
+
+                        </div>
+
+
+
+                  </div>
+
+
+
+            </div>
+
+            <!-- Profile Page Modal -->
+
+            <div class="profilePageOutfitModal hideSignIn" style="overflow-y: hidden;">
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_profilePageOutfit">
+                              <p style="cursor: pointer;"> x</p>
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: flex-start; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto; text-align: center; width: 100%; ">
+                              <h2>Outfits</h2>
+                              <!--  Modal Modual  -->
+                              <div style="position:relative; width: 100%; overflow-y:auto;  " class="profilePage-outfit-article-List">
+                                    <!-- class="outfit-article-List" -->
+                              </div>
+
+
+                        </div>
+
+
+
+                  </div>
+
+
+
+            </div>
+
+            <div class="profilePageLikesModal hideSignIn" style="overflow-y: hidden;">
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_profilePageLikes">
+                              <p style="cursor: pointer;"> x</p>
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: flex-start; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto; text-align: center; width: 100%; ">
+                              <h2>Likes</h2>
+                              <!--  Modal Modual  -->
+                              <div style="position:relative; width: 100%; overflow-y:auto;  " class="profilePage-like-article-List">
+                                    <!-- class="outfit-article-List" -->
+                              </div>
+
+
+                        </div>
+
+
+
+                  </div>
+
+
+
+            </div>
+
+            <div style="z-index:7;" class="confModal hideSignIn doNotClose">
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_conf">
+                              <p style="cursor: pointer;"> x</p>
+
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: center; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto; text-align: center;" class="confContent doNotClose">
+                              <h2 class="confHeading doNotClose"> </h2>
+                              <p class="confDesc doNotClose"></p>
+                              <div style="display:flex; justify-content: center; margin-bottom:10px;">
+                                    <div style="margin-right:10px; padding:0px;  min-width: 103px; max-width: 103px;     line-height: 29px; background-color:white; color:black; " class="carousel__tag doNotClose confCancelB">
+                                          <p class="doNotClose">Cancel </p>
+                                    </div>
+                                    <div style="margin-left:10px; padding:0px; min-width: 103px; max-width:103px;    line-height: 29px; background-color:white; color:black;" class="carousel__tag doNotClose confConfirmB">
+                                          <p class="doNotClose">Confirm </p>
+                                    </div>
+                              </div>
+                        </div>
+
+
+                  </div>
+
+            </div>
+
+            <div class="profilePageNotificationsModal hideSignIn" style="overflow-y: hidden;">
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_profilePageNotifications">
+                              <p style="cursor: pointer;"> x</p>
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: flex-start; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto; text-align: center; width: 100%; ">
+                              <h2>Notifications</h2>
+                              <!--  Modal Modual  -->
+                              <div style="position:relative; width: 100%; overflow-y:auto;  " class="profilePage-notification-List">
+                                    <!-- class="outfit-article-List" -->
+                              </div>
+
+
+                        </div>
+
+
+
+                  </div>
+
+
+
+            </div>
+
+            <div class="profilePageFollowersFollowingModal hideSignIn" style="overflow-y: hidden;">
+                  <div style="position:relative; width: 100%; height: 10px; cursor: pointer;">
+                        <div style="height: 20px; width: 20px; cursor: pointer; padding: 10px; z-Index: 2;" class="banner_x_profilePageFollowersFollowing">
+                              <p style="cursor: pointer;"> x</p>
+                        </div>
+                  </div>
+
+                  <div style=" position:relative; display:flex; justify-content: flex-start; flex-direction: column; width: 100%; height: 100%; margin: auto; margin-top: auto; margin-bottom: auto;">
+                        <div style="margin:10px;margin-top:2px; margin-left: auto; margin-right: auto; text-align: center; width: 100%; ">
+                              <h2 class="FollowersFollowingHeading">Following</h2>
+                              <!--  Modal Modual  -->
+                              <div style="position:relative; width: 100%; overflow-y:auto;  " class="profilePage-followingfollowers-List followersfollowing">
+                                    <!-- class="outfit-article-List" -->
+                              </div>
+
+
+                        </div>
+
+
+
+                  </div>
+
+
+
+            </div>
+
+
+
+            <script src="js/data/database.js"></script>
+            <script src="js/main.js"></script>
+            <script src="js/ui/utility.js"></script>
+            <script src="js/ui/ui.js"></script>
+
+
+            <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+            <script>
+                  window.ga = function() {
+                        ga.q.push(arguments)
+                  };
+                  ga.q = [];
+                  ga.l = +new Date;
+                  ga('create', 'UA-XXXXX-Y', 'auto');
+                  ga('set', 'anonymizeIp', true);
+                  ga('set', 'transport', 'beacon');
+                  ga('send', 'pageview')
+            </script>
+            <script src="https://www.google-analytics.com/analytics.js" async></script>
+      </body>
+
 </html>

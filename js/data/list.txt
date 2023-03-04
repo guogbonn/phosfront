@@ -1,0 +1,147 @@
+"Watch",
+"Bracelet",
+"Necklace",
+"Ring",
+"Earrings",
+"Brooch",
+"Cufflinks",
+"Tie",
+"Bowtie",
+"Suspenders",
+"Cummerbund",
+"Pocket square",
+"Cravat",
+"Scarf",
+"Shawl",
+"Poncho",
+"Cape",
+"Sari",
+"Kimono",
+"Hijab",
+"Apron",
+"Chef's hat",
+"Kitchen gloves",
+"Oven mitts",
+"Work gloves",
+"Safety goggles",
+"Hard hat",
+"Steel-toed boots",
+"Lab coat",
+"Scrubs",
+"Uniform",
+"Tactical gear",
+"Life jacket",
+"Rafting helmet",
+"Wet suit",
+"Dive mask",
+"Flippers",
+"Snorkel",
+"Diving suit",
+"Surfboard",
+"Bandana",
+"Headband",
+"Ear warmers",
+"Neck gaiter",
+"Face mask",
+"Sun hat",
+"Visor",
+"Sunglasses",
+"Eyeglasses",
+"Contact lenses",
+"Sunglasses case",
+"Eyeglass case",
+"Wallet",
+"Purse",
+"Backpack",
+"Briefcase",
+"Handbag",
+"Luggage",
+"Tote bag",
+"Umbrella",
+"Bikini",
+"One-piece swimsuit",
+"Trunks",
+"Board shorts",
+"Rash guard",
+"Wetsuit",
+"Towel",
+"Robe",
+"Pajamas",
+"Slippers",
+"Swim cap",
+"Goggles",
+"Flippers",
+"Snorkel",
+"Diving suit",
+"Surfboard",
+"Sandals",
+"Flip-flops",
+"Ballet flats",
+"High heels",
+"Shirt",
+"Pants",
+"Jacket",
+"Dress",
+"Skirt",
+"Suit",
+"Sweater",
+"T-shirt",
+"Jeans",
+"Coat",
+"Blouse",
+"Tank top",
+"Leggings",
+"Underwear",
+"Socks",
+"Hat",
+"Scarf",
+"Gloves",
+"Belt",
+"Shoes",
+"Basketball jersey",
+"Basketball shorts",
+"Basketball shoes",
+"Football jersey",
+"Football pants",
+"Football cleats",
+"Shoulder pads",
+
+curl 'https://www.apartments.com/gilbert-az/' \
+  -H 'authority: www.apartments.com' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'referer: https://www.apartments.com/?&frontdoor=google&gclid=Cj0KCQiAtbqdBhDvARIsAGYnXBNsVR_KJdeRS01hLEPZV-JzAiPXMT_HPBWMoTIYKDC1wb8RdpO0bzMaApzOEALw_wcB&gclsrc=aw.ds' \
+  -H 'sec-fetch-dest: document' \
+  -H 'sec-fetch-mode: navigate' \
+  -H 'sec-fetch-user: ?1' \
+  -H 'upgrade-insecure-requests: 1' \
+  -H 'user-agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' \
+  --compressed
+
+  curl 'https://www.apartments.com/icon-on-main-royal-oak-mi/pszw24r/' \
+  -H 'authority: www.apartments.com' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'sec-fetch-dest: document' \
+  -H 'sec-fetch-mode: navigate' \
+  -H 'upgrade-insecure-requests: 1' \
+  -H 'user-agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' \
+  --compressed
+
+
+
+
+  curl 'https://www.zillow.com/homes/Warren,-MI_rb/' --compressed
+
+
+  curl 'https://www.zillow.com/homes/Asdee-Ln-Woodbridge,-VA-22192_rb/' \
+    -H 'authority: www.zillow.com' \
+    -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+    -H 'accept-language: en-US,en;q=0.9' \
+    -H 'sec-fetch-dest: document' \
+    -H 'sec-fetch-mode: navigate' \
+    -H 'sec-fetch-site: same-origin' \
+    -H 'sec-fetch-user: ?1' \
+    -H 'upgrade-insecure-requests: 1' \
+    -H 'user-agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' \
+    --compressed

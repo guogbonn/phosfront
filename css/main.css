@@ -1,0 +1,1814 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+/*
+ * Hide visually and from screen readers
+ */
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+ul {
+  margin-block-start: 0em !important;
+  margin-block-end: 0em !important;
+  margin-inline-start: 0px !important;
+  margin-inline-end: 0px !important;
+  padding-inline-start: 0px !important;
+}
+
+p {
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+/* type ahead */
+.typeahead_position {
+  bottom: 49px;
+  left: 82px;
+  left: 0px;
+  left: 3px;
+  right: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.typeahead_container {
+  position: relative;
+  width: auto;
+  min-width: 20vw;
+  max-height: 16vh;
+  box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  padding: 12px 18px;
+  transition: all 0.5s;
+  background-color: white;
+  overflow-y: auto;
+}
+
+/* this should actually be a selected class so intially the first one is selected then add a class event where the hovered one is selected, and keypress to go up/down enter */
+.typeaheadInstance:hover {
+  background-color: grey;
+  border-radius: 8px;
+}
+
+.typeaheadInstance {
+  width: 95%;
+  margin: auto;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.typeahead_position_1 {
+  top: 69px;
+  left: 40px;
+  right: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.typeahead_container_1 {
+
+  position: relative;
+  width: auto;
+  min-width: 20vw;
+  max-height: 18vh;
+  box-shadow: 0 1px 4px 0.5px rgb(0 0 0 / 25%);
+  border-radius: 12px;
+  padding: 12px 18px;
+  transition: all 0.5s;
+  background-color: white;
+  overflow-y: auto;
+}
+
+/* this should actually be a selected class so intially the first one is selected then add a class event where the hovered one is selected, and keypress to go up/down enter */
+.typeaheadInstance_1:hover {
+  background-color: grey;
+  border-radius: 8px;
+}
+
+.typeaheadInstance_1 {
+  width: 95%;
+  margin: auto;
+  padding: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* type ahead  */
+/* price Slider */
+input[type=range] {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 400px;
+  margin: 0;
+  padding: 0 2px;
+  /* Add some L/R padding to ensure box shadow of handle is shown */
+  overflow: hidden;
+  border: 0;
+  border-radius: 1px;
+  outline: none;
+  background: linear-gradient(grey, grey) no-repeat center;
+  /* Use a linear gradient to generate only the 2px height background */
+  background-size: 100% 2px;
+  pointer-events: none;
+}
+
+input[type=range]:active,
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 28px;
+  width: 28px;
+  border-radius: 28px;
+  background-color: #fff;
+  position: relative;
+  margin: 5px 0;
+  /* Add some margin to ensure box shadow is shown */
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  pointer-events: all;
+  box-shadow: 0 1px 4px 0.5px rgba(0, 0, 0, 0.25);
+}
+
+input[type=range]::-webkit-slider-thumb::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 13px;
+  left: 100%;
+  width: 2000px;
+  height: 2px;
+}
+
+.multi-range {
+  position: relative;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.multi-range input[type=range] {
+  position: absolute;
+}
+
+.multi-range input[type=range]:nth-child(1)::-webkit-slider-thumb::before {
+  background-color: red;
+}
+
+.multi-range input[type=range]:nth-child(2) {
+  background: none;
+}
+
+.multi-range input[type=range]:nth-child(2)::-webkit-slider-thumb::before {
+  background-color: grey;
+}
+
+/* price Slider  */
+/* spinner */
+.spinnerW {
+  position: absolute;
+  top: -51%;
+  left: 40%;
+  z-index: 1;
+  height: 40px;
+  width: 40px;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  height: 40px;
+  width: 40px;
+  transform: translate(-50%, -50%);
+}
+
+[class^=ball-] {
+  position: absolute;
+  display: block;
+  left: 30px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  transition: all 0.5s;
+  animation: circleRotate 4s both infinite;
+  transform-origin: 0 250% 0;
+}
+
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(1440deg);
+  }
+}
+
+.ball-1 {
+  z-index: -1;
+  background-color: #2196F3;
+  animation-timing-function: cubic-bezier(0.5, 0.3, 0.9, 0.9);
+}
+
+.ball-2 {
+  z-index: -2;
+  background-color: #03A9F4;
+  animation-timing-function: cubic-bezier(0.5, 0.6, 0.9, 0.9);
+}
+
+.ball-3 {
+  z-index: -3;
+  background-color: #00BCD4;
+  animation-timing-function: cubic-bezier(0.5, 0.9, 0.9, 0.9);
+}
+
+.ball-4 {
+  z-index: -4;
+  background-color: #009688;
+  animation-timing-function: cubic-bezier(0.5, 1.2, 0.9, 0.9);
+}
+
+.ball-5 {
+  z-index: -5;
+  background-color: #4CAF50;
+  animation-timing-function: cubic-bezier(0.5, 1.5, 0.9, 0.9);
+}
+
+.ball-6 {
+  z-index: -6;
+  background-color: #8BC34A;
+  animation-timing-function: cubic-bezier(0.5, 1.8, 0.9, 0.9);
+}
+
+.ball-7 {
+  z-index: -7;
+  background-color: #CDDC39;
+  animation-timing-function: cubic-bezier(0.5, 2.1, 0.9, 0.9);
+}
+
+.ball-8 {
+  z-index: -8;
+  background-color: #FFEB3B;
+  animation-timing-function: cubic-bezier(0.5, 2.4, 0.9, 0.9);
+}
+
+/* spinner */
+/* sign In  */
+.signIn {
+  position: fixed;
+  top: 20%;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  left: 7%;
+  width: 80vw;
+  height: 40vh;
+  background-color: white;
+  transition: all 0.3s ease-in;
+}
+
+.signUp {
+  position: fixed;
+  top: 20%;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  left: 7%;
+  width: 80vw;
+  height: 40vh;
+  background-color: white;
+  transition: all 0.3s ease-in;
+}
+
+.reset_passw {
+  position: fixed;
+  top: 20%;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  left: 7%;
+  width: 80vw;
+  height: 40vh;
+  background-color: white;
+  transition: all 0.3s ease-in;
+}
+
+.filter_modal {
+  position: fixed;
+  top: 20%;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  left: 7%;
+  width: 80vw;
+  height: 40vh;
+  background-color: white;
+  transition: all 0.3s ease-in;
+}
+
+ .save_outfit_modal, .profilePageOutfitModal, .profilePageLikesModal, .profilePageNotificationsModal, .profilePageFollowersFollowingModal {
+  position: fixed;
+  top: 20%;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  left: 7%;
+  width: 89vw;
+  height: 40vh;
+  background-color: white;
+  transition: all 0.3s ease-in;
+}
+
+.go_to_shop_modal, .confModal {
+  position: fixed;
+  top: 20%;
+  border-radius: 20px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  left: 7%;
+  width: 80vw;
+  height: 40vh;
+  background-color: white;
+  transition: all 0.3s ease-in;
+}
+
+.outfitInstance, .notificationInst, .userProfileInst {
+  box-shadow: 0px 2px 8px 0px rgb(50 50 50 / 50%);
+  height: 40px !important;
+  border-radius: 12px;
+  line-height: 40px;
+  transition: all 0.5s;
+  margin: 10px;
+  min-width: 70vw;
+  max-width: 71vw;
+  cursor: pointer;
+  text-overflow: clip !important;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 20px;
+}
+
+.notificationInst {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.outfitInstance:hover, .notificationInst:hover, .userProfileInst:hover {
+  transform: scale(1.05);
+}
+
+.outfit_list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: inline-block;
+}
+
+
+.hideSignIn {
+  visibility: hidden;
+  opacity: 0;
+  bottom: 0%;
+}
+
+.banner_x_s {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  padding: 9px;
+  color: black;
+  cursor: pointer;
+}
+
+.banner_x_sup {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  padding: 9px;
+  color: black;
+  cursor: pointer;
+}
+
+.banner_x_reset {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  padding: 9px;
+  color: black;
+  cursor: pointer;
+}
+
+.banner_x_filter {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  padding: 9px;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.banner_x_detail {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  padding: 9px;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.banner_x_shop, .banner_x_saveOutfit, .banner_x_conf, .banner_x_profilePageOutfit, .banner_x_profilePageLikes, .banner_x_profilePageNotifications, .banner_x_profilePageFollowersFollowing {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  padding: 9px;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.selected_filter {
+  background-color: white !important;
+  color: black !important;
+}
+
+.selected_filter_1 {
+  background-color: black !important;
+  color: white !important;
+}
+
+.signin__tag {
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  height: 30px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  min-width: 82px;
+}
+
+.signup__tag {
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  height: 30px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  min-width: 82px;
+}
+
+.reset__tag {
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  height: 30px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  min-width: 82px;
+}
+
+.filter__tag_f {
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  height: 25px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: gray;
+  color: white;
+  cursor: pointer;
+  min-width: 82px;
+}
+
+.filter__tag {
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  height: 30px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  min-width: 82px;
+}
+
+.signin_input {}
+
+.signin_input:focus {
+  outline: none;
+}
+
+  .listPage{
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .profilePage{
+    overflow-x: hidden;
+  }
+
+
+.banner {
+  position: fixed;
+  min-height: 40px;
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  visibility: 'hidden';
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+
+.banner_x {
+  position: absolute;
+  top: -9px;
+  right: 30px;
+  padding: 9px;
+  color: white;
+  visibility: hidden;
+}
+
+/*bottom banner  */
+/* search feild on home list page  */
+.search_field{
+  text-align: center;
+}
+.search_field:focus {
+  outline: none;
+  text-align: center;
+}
+
+/* search feild on home list page  */
+/* Header  */
+.phos_sign_in, .profile_page_button {
+  cursor: pointer;
+}
+
+/* Header end  */
+.profile-pic {
+  width: 48px;
+  max-height: 48px;
+  display: inline-block;
+}
+
+.circle {
+  border-radius: 100% !important;
+  width: 48px;
+  height: 48px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  /* position: absolute;
+    top: 2%;
+    left: 30%; */
+  left: 50%;
+  z-index: 20;
+}
+
+.carousel__img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* hr */
+.hrs {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+  margin-bottom: 40px;
+}
+
+/* hr */
+/* Card Pic Compoent Start  */
+.carousel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  font-family: Arial;
+  margin-bottom: 40px;
+}
+
+.carousel__list {
+  display: flex;
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 271px;
+  justify-content: center;
+  perspective: 300px;
+}
+
+.carousel__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0px;
+  width: 151px;
+  height: 266px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  position: absolute;
+  transition: all 0.3s ease-in;
+  cursor:pointer;
+}
+
+.carousel__item[data-pos="0"]:hover {
+  transform: scale(1.2) !important;
+}
+
+.carousel__item:nth-child(1) {
+  background: linear-gradient(45deg, #2d35eb 0%, #904ed4 100%);
+}
+
+.carousel__item:nth-child(2) {
+  background: linear-gradient(45deg, #2d35eb 0%, #fdbb2d 100%);
+}
+
+.carousel__item:nth-child(3) {
+  background: linear-gradient(45deg, #2d35eb 0%, #22c1c3 100%);
+}
+
+.carousel__item:nth-child(4) {
+  background: linear-gradient(45deg, #fdbb2d 0%, #904ed4 100%);
+}
+
+.carousel__item:nth-child(5) {
+  background: linear-gradient(45deg, #22c1c3 0%, #904ed4 100%);
+}
+
+.carousel__item:nth-child(6) {
+  background: linear-gradient(45deg, #22c1b3 0%, #904ed4 100%);
+}
+
+.carousel__item:nth-child(7) {
+  background: linear-gradient(45deg, #27c1c3 0%, #904ed4 100%);
+}
+
+.carousel__tag {
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  height: 30px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  min-width: 82px;
+}
+
+.carousel__tag_add {
+  height: 20px !important;
+  padding-top: 5px !important;
+  margin: 2px;
+  overflow: hidden;
+}
+
+.profile_page {
+  cursor: pointer;
+}
+
+.profilePage-notification-List {
+  height: 55vh;
+}
+
+.profilePageFollowFollowersCount {
+  width: 267px !important;
+}
+
+.outfit_list::-webkit-scrollbar {
+  display: none;
+}
+
+.notification_alert {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.notification_alert p {
+  align-self: center;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+
+/* use javascript to create mapping think of the images as occupying a point on a circle we can you trig to calulate ideal position cosine   translatex, scale is tranlsate y,  map translate x from -1 to 1 -> -40 40 and y (scale) from -1 to 1 -> .6 -> 1
+just one dead center
+
+two left right (with scale without )
+
+3 rotate dead left rigth etreams
+
+4+ keep three the 4 are equally shared amongst the the rest of the 75% of the circle
+
+the style of the element will be changed  when
+
+might have to manipulate scale between left extream and right simply ad a multiplying factor whenever sign is in that retion
+           2
+      -3         1
+  4                 0
+    3          -1
+          2
+
+          divide 360 by num elment
+          get the factor for each elemnt alternate   1 sin(factor - nth) and   1 sin(factor + nth) -1 -- 1 length = 2  say -.25 is the answer , then , -.25 - -1 = .75/2 = .375     then what is .375 of  the distance from .6 to 1 , 1 - .6  * .375 + .6  = 0.75
+*/
+/* .carousel__item[data-pos="0"] {
+  z-index: 5;
+}
+.carousel__item[data-pos="-1"], .carousel__item[data-pos="1"] {
+  opacity: 0.7;
+  filter: blur(1px) grayscale(10%);
+}
+.carousel__item[data-pos="-1"] {
+  transform: translateX(-40%) scale(0.9);
+  z-index: 4;
+}
+.carousel__item[data-pos="1"] {
+  transform: translateX(40%) scale(0.9);
+  z-index: 4;
+}
+.carousel__item[data-pos="-2"], .carousel__item[data-pos="2"] {
+  opacity: 0.4;
+  filter: blur(3px) grayscale(20%);
+}
+.carousel__item[data-pos="-2"] {
+  transform: translateX(-70%) scale(0.8);
+  z-index: 3;
+}
+.carousel__item[data-pos="2"] {
+  transform: translateX(70%) scale(0.8);
+  z-index: 3;
+}
+
+.carousel__item[data-pos="-3"], .carousel__item[data-pos="3"] {
+  opacity: 0.1;
+  filter: blur(6px) grayscale(30%);
+}
+
+.carousel__item[data-pos="-3"] {
+  transform: translateX(-56%) scale(0.7);
+  z-index: 2;
+}
+.carousel__item[data-pos="3"] {
+  transform: translateX(56%) scale(0.7);
+  z-index: 2;
+}
+ */
+/* Card Pic Compoent End  */
+/* modified from  http://www.javascriptkit.com/dhtmltutors/cssmediaqueries2.shtml */
+.profilePage {
+  display: none;
+}
+
+.profilePageProfilePic {
+  margin-top: 10vh;
+}
+
+
+.profilePage-outfit-article-List, .profilePage-like-article-List , .profilePage-followingfollowers-List, .profilePage-notification-List{
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */}
+
+.outfit-article-List,.outfit_list  {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */}
+
+
+  .profilePage-outfit-article-List::-webkit-scrollbar, .profilePage-like-article-List::-webkit-scrollbar , .profilePage-followingfollowers-List::-webkit-scrollbar, .profilePage-notification-List::-webkit-scrollbar{
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */}
+
+  .outfit-article-List::-webkit-scrollbar,.outfit_list::-webkit-scrollbar  {
+    display: none;
+    /* Firefox */}
+
+  .carousel_button_right{
+    cursor: pointer;
+  }
+
+
+
+@media (min-device-width: 200px) and (max-device-width: 320px) {
+
+  /* some CSS here */
+  /* some CSS here */
+  .carousel_button_right {
+    position: relative;
+    /* top: 0px; */
+    display: flex;
+    margin: auto;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .profil_pic_offset {
+    transform: translateX(9vw);
+  }
+
+  .phos_headerz {
+    visibility: visible;
+    color: white !important;
+    position: absolute;
+    left: 10px;
+    top: 15%;
+    font-size: small;
+  }
+
+  .search_field {
+    width: 40vw;
+  }
+
+  .phos_filterz {
+    visibility: visible;
+    position: absolute;
+    top: 24px;
+    left: 32%;
+    color: white;
+    line-height: 0;
+    font-size: 16px;
+    padding-bottom: 20px;
+    font-size: small;
+    cursor: pointer;
+  }
+
+  .phos_sign_in, .profile_page_button {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    right: 19%;
+    color: white;
+    line-height: .1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: small;
+  }
+
+  .profile_page {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    right: 19%;
+    color: white;
+    line-height: .1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: small;
+  }
+
+  .phos_input {
+    visibility: visible;
+    left: 13vw;
+    top: 50%;
+  }
+
+  .signIn {
+    top: 20%;
+    left: 3%;
+    width: 95vw;
+    height: 62vh;
+  }
+
+  .signUp {
+    top: 16%;
+    left: 3%;
+    width: 95vw;
+    height: 75vh;
+  }
+
+  .reset_passw {
+    top: 20%;
+    left: 3%;
+    width: 95vw;
+    height: 62vh;
+  }
+
+  .filter_modal {
+    top: 20%;
+    left: 3%;
+    width: 95vw;
+    height: 75vh;
+  }
+
+ .save_outfit_modal, .profilePageLikesModal, .profilePageNotificationsModal, .profilePageFollowersFollowingModal {
+    top: 11%;
+    left: 3%;
+    width: 95vw;
+    height: 85vh;
+  }
+
+  .profilePageOutfitModal, .profilePageLikesModal {
+    left: 4.5%;
+    width: 91vw;
+    height: 85vh;
+    top: 10%;
+  }
+
+  .go_to_shop_modal, .confModal {
+    top: 20%;
+    left: 3%;
+    width: 95vw;
+    height: 62vh;
+  }
+
+  .outfitInstance, .notificationInst, .userProfileInst {
+    min-width: 80vw;
+    max-width: 81vw;
+  }
+
+  .outfit_list {
+    height: 59vh;
+  }
+
+   .profilePage-outfit-article-List, .profilePage-like-article-List,.profilePage-notification-List, .profilePage-followingfollowers-List{
+       height: 71vh;
+   }
+
+  .carousel__tag_add {
+    margin: 0px;
+    font-size: 10px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .phone_filter__tag_f {
+    min-width: 50px !important;
+  }
+
+  .price_tool_tip {
+    display: flex;
+    width: 263px;
+    justify-content: space-around;
+  }
+
+  .price_range input[type=range] {
+    width: 200px;
+  }
+
+  /* left postion depends on text length */
+  .typeahead_position {
+    left: 0px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .banner {
+    width: 81vw;
+    left: 1%;
+    z-index: 7;
+    transform: translate(2%, 4%);
+  }
+
+  .filterAutoCompleteInput{
+        width: 247px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 560px) {
+
+  /* some CSS here */
+  .carousel_button_right {
+    right: 9%;
+    position: absolute;
+    top: 0px;
+    transform: translateX(50%);
+  }
+
+  .carousel__tag_add {
+    margin: 2px;
+    font-size: 10px;
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .profil_pic_offset {
+    transform: translateX(9vw);
+  }
+
+  .phos_headerz {
+    visibility: visible;
+    color: white !important;
+    position: absolute;
+    left: 10px;
+    top: 5%;
+  }
+
+  .search_field {
+    width: 40vw;
+  }
+
+  .phos_filterz {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    left: 60%;
+    color: white;
+    line-height: .5;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .phos_sign_in, .profile_page_button {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    right: 15%;
+    color: white;
+    line-height: .5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .profile_page {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    right: 15%;
+    color: white;
+    line-height: .5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .phos_input {
+    visibility: visible;
+    left: 13vw;
+    top: 50%;
+  }
+
+  .signIn {
+    left: 6.8%;
+    width: 86vw;
+    height: 67vh;
+  }
+
+  .signUp {
+    left: 6.8%;
+    width: 86vw;
+    height: 75vh;
+  }
+
+  .reset_passw {
+    left: 6.8%;
+    width: 86vw;
+    height: 51vh;
+  }
+
+  .filter_modal {
+    left: 6.5%;
+    width: 88vw;
+    height: 72vh;
+
+  }
+
+ .profilePageNotificationsModal, .profilePageFollowersFollowingModal {
+    left: 7%;
+    width: 89vw;
+    height: 71vh;
+  }
+
+  .profilePageOutfitModal, .profilePageLikesModal, .save_outfit_modal {
+    left: 4.5%;
+    width: 91vw;
+    height: 85vh;
+    top: 10%;
+  }
+
+
+  .profilePage-outfit-article-List, .profilePage-like-article-List, .profilePage-followingfollowers-List{
+      height: 71vh;
+  }
+
+
+  .profilePage-notification-List, .profilePage-followingfollowers-List{
+      height: 58vh;
+  }
+
+
+  .outfit-article-List,.outfit_list  {
+        height: 63vh !important;
+  }
+
+
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .profilePage-outfit-article-List::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .profilePage-outfit-article-List {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .go_to_shop_modal, .confModal {
+    left: 7%;
+    width: 81vw;
+    height: 67vh;
+  }
+
+  .outfitInstance, .notificationInst, .userProfileInst {
+    min-width: 70vw;
+    max-width: 71vw;
+  }
+
+
+
+  .phone_filter__tag_f {
+    min-width: 60px !important;
+  }
+
+  .price_tool_tip {
+    display: flex;
+    width: 290px;
+    justify-content: space-around;
+  }
+
+  .price_range input[type=range] {
+    width: 200px;
+  }
+
+  .banner {
+    left: 18.5%;
+    z-index: 7;
+    width: 83vw;
+    transform: translate(-16%, 4%);
+  }
+
+
+  .filterAutoCompleteInput{
+        width: 247px;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 1023px) {
+
+  /* some CSS here */
+  .carousel_button_right {
+    right: 28%;
+    position: absolute;
+    top: 0px;
+    transform: translateX(50%);
+  }
+
+  .profil_pic_offset {
+    transform: translateX(26vw);
+  }
+
+  .phos_headerz {
+    visibility: visible;
+    color: white !important;
+    position: absolute;
+    left: 10px;
+    top: 5%;
+  }
+
+  .search_field {
+    width: 40vw;
+  }
+
+  .phos_filterz {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    left: 60%;
+    color: white;
+    line-height: .5;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .phos_sign_in, .profile_page_button {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    right: 15%;
+    color: white;
+    line-height: .5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .profile_page {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    right: 15%;
+    color: white;
+    line-height: .5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .phos_input {
+    visibility: visible;
+    left: 13vw;
+    top: 50%;
+  }
+
+  .signIn {
+    left: 17%;
+    width: 65vw;
+    height: 58vh;
+  }
+
+  .signUp {
+    left: 17%;
+    width: 65vw;
+    height: 58vh;
+  }
+
+  .reset_passw {
+    left: 17%;
+    width: 65vw;
+    height: 58vh;
+  }
+
+  .filter_modal {
+    left: 17%;
+    width: 65vw;
+    height: 58vh;
+  }
+
+ .profilePageNotificationsModal, .profilePageFollowersFollowingModal {
+    left: 17%;
+    width: 65vw;
+    height: 71vh;
+  }
+
+  .profilePageOutfitModal, .profilePageLikesModal, .save_outfit_modal, .profilePageNotificationsModal, .profilePageFollowersFollowingModal {
+    left: 22%;
+    width: 58vw;
+    height: 84vh;
+    top: 10%;
+  }
+
+  /* necessary for profile page outfit modal */
+  .profilePageOutfitModal .profil_pic_offset, .profilePageLikesModal .profil_pic_offset {
+    transform: translateX(9vw);
+  }
+
+  .profilePageOutfitModal .carousel_button_right, .profilePageLikesModal .carousel_button_right {
+    right: 21%;
+  }
+
+  .profilePage-outfit-article-List, .profilePage-like-article-List {
+    height: 65vh;
+  }
+
+
+  .go_to_shop_modal, .confModal {
+    left: 18%;
+    width: 65vw;
+    height: 50vh;
+  }
+
+  .outfitInstance, .notificationInst, .userProfileInst {
+    min-width: 20vw;
+    max-width: 21vw;
+  }
+
+
+
+   .profilePage-outfit-article-List, .profilePage-like-article-List , .profilePage-followingfollowers-List, .profilePage-notification-List{
+       height: 76vh;
+   }
+
+   .outfit-article-List,.outfit_list  {
+         height: 67vh !important;
+   }
+
+
+
+  .phone_filter__tag_f {
+    min-width: 60px !important;
+  }
+
+  .price_tool_tip {
+    display: flex;
+    width: 444px;
+    justify-content: space-around;
+  }
+
+  .price_range input[type=range] {
+    width: 250px;
+  }
+
+  .banner {
+    width: 53.2vw;
+left: 22%;
+    z-index: 7;
+    translate(-17%, 4%);
+  }
+
+  .spinnerW{
+    left: 42%;
+  }
+
+  .filterAutoCompleteInput{
+        width: 247px;
+  }
+}
+
+/* #### Desktops #### */
+@media (min-width: 1024px) {
+
+  /* some CSS here */
+  .carousel_button_right {
+    right: 33%;
+    position: absolute;
+    top: 0px;
+    transform: translateX(50%);
+  }
+
+  .profil_pic_offset {
+    transform: translateX(29vw);
+  }
+
+  .phos_headerz {
+    visibility: visible;
+    color: white !important;
+    position: absolute;
+    left: 10px;
+    top: 5%;
+  }
+
+  .search_field {
+    width: 40vw;
+  }
+
+  .phos_filterz {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    left: 60%;
+    color: white;
+    line-height: .5;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .phos_sign_in, .profile_page_button {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    right: 15%;
+    color: white;
+    line-height: .5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .profile_page {
+    visibility: visible;
+    position: absolute;
+    top: -20px;
+    right: 15%;
+    color: white;
+    line-height: .5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .phos_input {
+    visibility: visible;
+    left: 13vw;
+    top: 50%;
+  }
+
+  .signIn {
+    left: 25%;
+    width: 50vw;
+    height: 70vh;
+  }
+
+  .signUp {
+    top: 17%;
+    left: 25%;
+    width: 50vw;
+    height: 80vh;
+  }
+
+
+
+  .reset_passw {
+    left: 35%;
+    width: 29vw;
+    height: 50vh;
+  }
+
+  .filter_modal {
+    left: 30%;
+    width: 38vw;
+    height: 70vh;
+  }
+
+.profilePageOutfitModal {
+    left: 30%;
+    width: 38vw;
+    height: 71vh;
+  }
+
+  .profilePageOutfitModal, .profilePageLikesModal, .save_outfit_modal, .profilePageNotificationsModal, .profilePageFollowersFollowingModal {
+    left: 22%;
+    width: 58vw;
+    height: 84vh;
+    top: 10%;
+  }
+
+  /* necessary for profile page outfit modal */
+  .profilePageOutfitModal .profil_pic_offset, .profilePageLikesModal .profil_pic_offset {
+    transform: translateX(9vw);
+  }
+
+  .profilePageOutfitModal .carousel_button_right, .profilePageLikesModal .carousel_button_right {
+    right: 21%;
+  }
+
+  .profilePage-outfit-article-List, .profilePage-like-article-List, .profilePage-followingfollowers-List {
+    height: 65vh;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .profilePage-outfit-article-List::-webkit-scrollbar, .profilePage-like-article-List::-webkit-scrollbar {
+    display: none;
+  }
+
+  .go_to_shop_modal, .confModal {
+    left: 35%;
+    width: 29vw;
+    height: 50vh;
+  }
+
+  .outfitInstance, .notificationInst, .userProfileInst {
+    min-width: 20vw;
+    max-width: 21vw;
+  }
+
+  .profilePage-outfit-article-List, .profilePage-like-article-List , .profilePage-followingfollowers-List, .profilePage-notification-List{
+      height: 72vh;
+  }
+
+  .outfit-article-List,.outfit_list  {
+        height: 62vh !important;
+  }
+
+
+
+  .outfit_list {
+    height: 52vh;
+  }
+
+  .phone_filter__tag_f {
+    min-width: 60px !important;
+  }
+
+  .price_tool_tip {
+    display: flex;
+    width: 444px;
+    justify-content: space-around;
+  }
+
+  .price_range input[type=range] {
+    width: 300px;
+  }
+
+  .banner {
+    width: 54.2vw;
+    left: 21.9%;
+    z-index: 7;
+    translate(-17%, 4%);
+  }
+
+  .spinnerW{
+left: 45%;
+  }
+
+
+  .filterAutoCompleteInput{
+        width: 250px;
+  }
+
+
+}
