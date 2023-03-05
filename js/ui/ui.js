@@ -3131,6 +3131,9 @@
   // add consent modal, could we just replace the div content with the text?
   // consolidate persistent data on user login and logout
 
+  // remove overflow and scroll bar from feed page on iphone 
+  // shift filter modal up an dto the right, almost touching the header 
+
 
 
   // change view Clothing so it doesn not update ui but records what happens
